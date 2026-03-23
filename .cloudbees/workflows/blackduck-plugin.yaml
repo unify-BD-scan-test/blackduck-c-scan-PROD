@@ -7,7 +7,7 @@ on:
     branches:
       - 'main'
   schedule:
-    - cron: 30 20 * * 1-5
+    - cron: 30 1 * * 1,4
 permissions:
   scm-token-own: read
   scm-token-org: read
@@ -22,7 +22,7 @@ jobs:
         with:
           server-url: https://blackduck.saas-qa.beescloud.com
           api-token: ${{ secrets.BD_API_TOKEN }}
-          project-name: blackduck-c-scan
+          project-name: blackduck-c-scan-prod
           project-version: 0.0.1
           detect-cli-params: --logging.level.detect=DEBUG --blackduck.offline.mode=false
           ref: main
